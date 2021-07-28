@@ -1,0 +1,10 @@
+import numpy as np
+from sklearn.metrics import roc_curve
+y = np.array([0, 0, 1, 1])
+# remember you need to have scores as probabilities
+# scores = model.predict_proba(y)
+scores = np.array([0.1, 0.4, 0.35, 0.8])
+fpr, tpr, thresholds = roc_curve(y, scores)
+print("tpr =",tpr)
+print("fpr =", fpr)
+print("thresholds = ",thresholds)
